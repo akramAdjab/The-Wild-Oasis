@@ -17,12 +17,12 @@ function ProtectRoute({ children }) {
 
   // 1. Load the authenticated user
   const { isAuthenticated, isLoading } = useUser();
+  console.log(isAuthenticated);
 
   // 2. If there's NO user, redirect to /login
   useEffect(
     function () {
-      if ((!isLoading && !isAuthenticated) || !isAuthenticated)
-        navigate("/login");
+      if (!isLoading && !isAuthenticated) navigate("/login");
     },
     [isAuthenticated, isLoading, navigate]
   );
