@@ -28,15 +28,15 @@ function UpdateUserDataForm() {
 
     if (!fullName) return;
 
-    updateUser(
-      { fullName, avatar },
-      {
-        onSuccess: () => {
-          setAvatar(null);
-          e.target.reset();
-        },
-      }
-    );
+    // updateUser(
+    //   { fullName, avatar },
+    //   {
+    //     onSuccess: () => {
+    //       setAvatar(null);
+    //       e.target.reset();
+    //     },
+    //   }
+    // );
   }
 
   function handleCancel() {
@@ -54,6 +54,7 @@ function UpdateUserDataForm() {
           type="text"
           value={fullName}
           onChange={(e) => setFullName(e.target.value)}
+          disabled={true}
           id="fullName"
         />
       </FormRow>
@@ -61,7 +62,8 @@ function UpdateUserDataForm() {
         <FileInput
           id="avatar"
           accept="image/*"
-          disabled={isUpdating}
+          // disabled={isUpdating}
+          disabled={true}
           onChange={(e) => setAvatar(e.target.files[0])}
         />
       </FormRow>
@@ -74,7 +76,8 @@ function UpdateUserDataForm() {
         >
           Cancel
         </Button>
-        <Button disabled={isUpdating}>Update account</Button>
+        {/* <Button disabled={isUpdating}>Update account</Button> */}
+        <Button disabled={true}>Update account</Button>
       </FormRow>
     </Form>
   );
