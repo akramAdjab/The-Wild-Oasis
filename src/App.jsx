@@ -18,6 +18,7 @@ import Checkin from "./pages/Checkin";
 import ProtectRoute from "./ui/ProtectRoute";
 
 import GlobalStyles from "./styles/GlobalStyles";
+import Ping from "./pages/Ping";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -59,6 +60,7 @@ function App() {
 
             <Route path="login" element={<Login />} />
             <Route path="*" element={<PageNotFound />} />
+            <Route path="ping" element={<Ping />} />
           </Routes>
         </BrowserRouter>
 
