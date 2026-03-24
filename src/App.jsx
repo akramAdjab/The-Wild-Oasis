@@ -59,7 +59,7 @@ function App() {
             </Route>
 
             <Route path="login" element={<Login />} />
-            <Route path="ping" element={<Ping />} />
+            <Route path="api/ping" element={<Ping />} />
             <Route path="*" element={<PageNotFound />} />
           </Routes>
         </BrowserRouter>
